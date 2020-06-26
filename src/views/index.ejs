@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+      img{
+        border-radius:none;
+      }
+    
+      .zoom:hover {
+        transform: scale(1.5);
+        border-radius: 0;
+        /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+    </style>
+</head>
+<body>
+<header>
+<!-- nav-->
+<nav class="navbar navbar-expand-lg  navbar-dark">
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        
+        
+        <% for(let i=0;i<nav.length;i++){%>
+        <a class="nav-item nav-link <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  <h1><%=title%></h1>
+  <div class="panel panel-default">
+    <input class="panel-body" id="keywords" placeholder="search"></input>
+  </div>
+</header>
+<!-- /nav-->
+<main>
+  <div class="blog-container" id="highlight">
+    <div class="blog">
+      <!--post1-->
+      <div class="blog-post-card">
+        <div class="card">
+          <div class="row no-gutters ">
+            <!--img-->
+            <div class="col-md-2 blog-post-img">
+              <img src="./images/someperson1.jfif" class="mx-auto d-block card-img zoom" alt="someperson">
+            </div>
+            <!--/img-->
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Repurpose Content to Reach a Wider Audience</h5>
+                <p class="card-text"><a href="#">87thfloor.com</a></p>
+                <p class="card-text"><small class="text-muted">2 hours ago <span class="more"></span><a href="#">Read More</a></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /post1-->
+ 
+      <!--post2-->
+      <div class="blog-post-card">
+        <div class="card ">
+          <div class="row no-gutters ">
+            <!--img-->
+            <div class="col-md-2 blog-post-img">
+              <img src="./images/someperson2.jfif" class="mx-auto d-block card-img zoom" alt="someperson">
+            </div>
+            <!--/img-->
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">14 Useful websites for Designers</h5>
+                <p class="card-text"><a href="#">devgarage.com</a></p>
+                <p class="card-text"><small class="text-muted">Yesterday<span class="more"></span><a href="#" >Read More</a></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/post2-->
+      <!--post3-->  
+      <div class="blog-post-card">
+        <div class="card ">
+          <div class="row no-gutters ">
+            <!--img-->
+            <div class="col-md-2 blog-post-img">
+              <img src="./images/someperson3.jfif" class="mx-auto d-block card-img zoom" alt="someperson">
+            </div>
+            <!--/img-->
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Measuring Your Link Building with Google Analytics</h5>
+                <p class="card-text"><a href="#">searchengineways.com</a></p>
+                <p class="card-text"><small class="text-muted">Yesterday<span class="more"></span><a href="#">Read More</a></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/post3-->
+      <!-- more-->
+      <div class="more-post">
+        <div class="card">
+                <h5 class="card-text"><button class="btn btn-primary btn-sm float-right" type="submit">More <span></span></button></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!--/main-->
+<footer>
+  <!--- social media ------->
+  <h4>Follow Us</h4>
+  <!--Twitter-->
+  <div class="social-btns">
+    <button type="button" class="social-btn btn-tw"> Twitter</button>
+    <!--Facebook-->
+    <button type="button" class="social-btn btn-fb">Facebook</button>
+    <!--Google +-->
+    <button type="button" class="social-btn btn-gplus"> Google +</button>
+  </div>
+  <p >&copy; VIVEK T V, 2020</p>
+</footer>
+<!--/footer-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="./css/highlighter.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
+
+
+
+
+

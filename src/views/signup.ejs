@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myLibrary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/signup.css">
+</head>
+<body>
+<header>
+<!-- nav-->
+<nav class="navbar navbar-expand-lg  navbar-dark">
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        <% for(let i=0;i<nav.length;i++){%>
+            <a class="nav-item nav-link <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  <h1>Library</h1>
+  <div class="panel panel-default">
+    <input class="panel-body" id="keywords" placeholder="search"></input>
+  </div>
+</header>
+<!-- /nav-->
+<main >
+  <div class="container mt-3 " >
+    <form id="form" class="form-horizontal" role="form" >
+        <h3 class="form-header">Sign Up </h3>
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label ">Full Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="name" name="name" placeholder="Full Name" class="form-control " autofocus>
+                <div class="valid-feedback">
+                </div>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" id="email" name="email" placeholder="Email" class="form-control">
+                <div class="valid-feedback">
+                </div>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password" id="password" name="password" placeholder="Password" class="form-control">
+                <div class="valid-feedback">
+                </div>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-5 control-label">Date of Birth</label>
+            <div class="col-sm-9">
+                <input type="date" id="birthDate" name="dob" class="form-control">
+                <div class="valid-feedback">
+                </div>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">Country</label>
+            <div class="col-sm-9">
+                <select id="country" name="country" class="form-control">
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">Uk</option>
+                    <option value="france">France</option>
+        
+                </select>
+                <div class="valid-feedback">
+                </div>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <label class="control-label col-sm-3">Gender</label>
+            <div class="col-sm-6">
+                <div class="row" id="gender">
+                    <div class="col-sm-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="gender"  value="Female">Female
+                        </label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="gender"  value="Male" >Male
+                        </label>
+                    </div>
+                    <div class="col-sm-8">
+                        <label class="radio-inline">
+                            <input type="radio" name="gender"  value="Unknown">Unknown
+                        </label>
+                    </div>
+                </div>
+                <div class="valid-feedback">
+                </div>
+                <div class="invalid-feedback">
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="checkbox" >
+                    <label id="termscheckbox">
+                        <input type="checkbox" id="terms">I accept <a href="#">terms</a>
+                    </label>
+                    <div class="valid-feedback">
+                    </div>
+                    <div class="invalid-feedback">
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3 mx-auto">
+                <button type="submit" class="btn btn-primary btn-block submit-btn">Sign Up</button>
+            </div>
+        </div>
+    </form> <!-- /form -->
+</div> <!-- ./container -->
+   <!-- /form -->
+</div> <!-- ./container -->
+  <!-- /form-->
+</main>
+<!-- /main-->
+<footer id="highlight">
+    <!--- social media ------->
+    <h4>Follow Us</h4>
+    <!--Twitter-->
+    <div class="social-btns">
+      <button type="button" class="social-btn btn-tw"> Twitter</button>
+      <!--Facebook-->
+      <button type="button" class="social-btn btn-fb">Facebook</button>
+      <!--Google +-->
+      <button type="button" class="social-btn btn-gplus"> Google +</button>
+    </div>
+    <p >&copy; VIVEK T V 2020</p>
+  </footer>
+  <!--/footer-->
+  <!--  all  js files-->
+  <script src="./js/signup.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="./js/highlighter.js"></script>
+  <script src="./js/script.js"></script>
+  <script>
+    const form=document.getElementById('form');
+    form.addEventListener('submit',function(e){
+      
+      e.preventDefault();
+      var name=document.getElementById("name").value;;
+      var password=  document.getElementById("password").value;
+      var email = document.getElementById("email").value;
+      var dob = document.getElementById("birthDate").value;
+      var country = document.getElementById("country").value;
+      var gender= document.querySelector("input[name]:checked").value;
+      
+      
+      
+      const formData={
+          name:name,
+          email:email,
+          password:password,
+          dob:dob,
+          country:country,
+          gender:gender
+        };
+        console.log(formData);
+      if(validate()){
+      fetch('/signup/',{
+        method:'POST',
+        headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+          },
+         body:JSON.stringify(formData)
+      })
+      .then(
+        function(response){
+          return response.json();
+        }
+      )
+      .then(
+        function(data){
+           alert(data.message)
+           if(data.redirect){
+             
+             window.location.href="/signin";
+           }
+        }
+      )
+      }
+    })
+  
+     </script>
+  </body>
+  </html>

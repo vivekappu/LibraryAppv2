@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myLibrary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/signin.css">
+   
+</head>
+<body>
+<header>
+<!-- nav-->
+<nav class="navbar navbar-expand-lg  navbar-dark">
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        <% for(let i=0;i<nav.length;i++){%>
+          <a class="nav-item nav-link <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
+          <% } %>
+      </div>
+    </div>
+  </nav>
+  <h1>Library</h1>
+  <div class="panel panel-default">
+    <input class="panel-body" id="keywords" placeholder="search"></input>
+  </div>
+</header>
+<!-- /nav-->
+<main>
+  <div class="container">
+        <div class="card card-container">
+        <h2 class='text-center'>EDIT AUTHOR </h2>
+        <hr>
+
+            <form id="form" class="form" >
+                <p class="input_title">Author</p>
+                <div>
+                <input type="text" id="author" class=" form-control " placeholder="author" name="author" value="<%=author.author%>" autofocus>
+                <div class="valid-feedback">
+                 ok!
+                </div>
+                <div class="invalid-feedback">
+                  please fill this field!
+                </div>
+              </div>
+              <p class="input_title">books</p>
+                <div>
+                <input type="text" id="books" class=" form-control " placeholder="books" name="books" value="<%=author.books%>"autofocus>
+                <div class="valid-feedback">
+                 ok!
+                </div>
+                <div class="invalid-feedback">
+                  please fill this field!
+                </div>
+              </div>
+              <p class="input_title">genre</p>
+              <div>
+              <input type="text" id="genre" class=" form-control " placeholder="Genre" name="genre" value="<%=author.genre%>" autofocus>
+              <div class="valid-feedback">
+               ok!
+              </div>
+              <div class="invalid-feedback">
+                please fill this field!
+              </div>
+            </div>
+            <p class="input_title">Description</p>
+            <div>
+            <input type="text" id="description" class=" form-control " placeholder="description" name="description" value="<%=author.description%>" autofocus>
+            <div class="valid-feedback">
+             ok!
+            </div>
+            <div class="invalid-feedback">
+              please fill this field!
+            </div>
+          </div>
+          <p class="input_title">ImageUrl</p>
+          <div>
+          <input type="file" id="imageurl" onchange="readURL(this);" class=" form-control " placeholder="imageurl" name="img" value="<%=author.img%>" autofocus>
+          <div >
+            <img src="/images/<%=author.img%>" id="imagefile"  style="width:200px;height:200px;margin-top:20px" alt="<%=author.author%>">
+          </div>
+          <div class="valid-feedback">
+           ok!
+          </div>
+          <div class="invalid-feedback">
+            please fill this field!
+          </div>
+        </div>
+        <br>
+        <button id="updatebtn" class="submit-btn btn-lg btn-primary" postto="/editauthor/<%=author._id%>"  type="submit">UPDATE</button>
+        <button id="deletebtn" class="submit-btn btn-lg btn-danger" getto="/editauthor/<%=author._id%>/delete" type="submit"> DELETE </button>
+            </form><!-- /form -->
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+</main>
+<!--/main-->
+<footer id="highlight">
+    <!--- social media ------->
+    <h4>Follow Us</h4>
+    <!--Twitter-->
+    <div class="social-btns">
+      <button type="button" class="social-btn btn-tw"> Twitter</button>
+      <!--Facebook-->
+      <button type="button" class="social-btn btn-fb">Facebook</button>
+      <!--Google +-->
+      <button type="button" class="social-btn btn-gplus"> Google +</button>
+    </div>
+    <p >&copy; VIVEK T V 2020</p>
+  </footer>
+  <!--/footer-->
+
+  <!--validation js-->
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src=".././js/highlighter.js"></script>
+  <script src=".././js/editauthorvalidation.js"></script>
+
+  </body>
+  </html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../.././css/style.css">
+    <style>
+      img{
+        width:300px;
+        margin:10px;
+      }
+      p{
+        line-height: 1rem;
+      }
+      .description{
+        font-size: larger;
+        line-height: 1.5rem;
+        color:black;
+      }
+      .card-body{
+        margin-left:20px;
+      }
+    </style>
+</head>
+<body>
+<header>
+<!-- nav-->
+<nav class="navbar navbar-expand-lg  navbar-dark">
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ">
+        
+        
+        <% for(let i=0;i<nav.length;i++){%>
+          <a class="nav-item nav-link <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  <h1><%=title%></h1>
+  <div class="panel panel-default">
+    <input class="panel-body" id="keywords" placeholder="search"></input>
+  </div>
+</header>
+<!-- /nav-->
+<main>
+  <div class="blog-container" id="highlight">
+    <div class="blog">
+      <!--bookpost-->
+      <%for(i=0;i<authors.length;i++){%>
+      <div class="blog-post-card">
+        <div class="card">
+          <div class="row no-gutters ">
+            <!--img-->
+            <div class="col-md-2 blog-post-img">
+              <img src="images/<%=authors[i].img%>" class="col-sm-12" alt="<%=authors[i].name%>">
+            </div>
+            <!--/img-->
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%=authors[i].author%></h5>
+                <p class="card-text"><a href="#"><%=authors[i].books%></a></p>
+                <p class="card-text"><small class="text-muted"><%=authors[i].genre%></small></p>
+                <p class="description"><%=authors[i].description%></p><small class="text-muted"><span class="more"></span><a href="/authors/<%=authors[i]._id%>">Read More</a></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%}%>
+      <!-- /bookpost-->
+ 
+      
+      <!-- more-->
+      
+    </div>
+  </div>
+</main>
+<!--/main-->
+<footer>
+  <!--- social media ------->
+  <h4>Follow Us</h4>
+  <!--Twitter-->
+  <div class="social-btns">
+    <button type="button" class="social-btn btn-tw"> Twitter</button>
+    <!--Facebook-->
+    <button type="button" class="social-btn btn-fb">Facebook</button>
+    <!--Google +-->
+    <button type="button" class="social-btn btn-gplus"> Google +</button>
+  </div>
+  <p >&copy; VIVEK T V, 2020</p>
+</footer>
+<!--/footer-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="./css/highlighter.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
