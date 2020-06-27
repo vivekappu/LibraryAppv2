@@ -128,3 +128,7 @@ footer p{
   color:gray;
   margin:10px;
 }
+
+.hide{
+  display:none;
+}
