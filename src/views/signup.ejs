@@ -157,59 +157,11 @@
   </footer>
   <!--/footer-->
   <!--  all  js files-->
-  <script src="./js/signup.js"></script>
+  
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script src="./js/highlighter.js"></script>
   <script src="./js/script.js"></script>
-  <script>
-    const form=document.getElementById('form');
-    form.addEventListener('submit',function(e){
-      
-      e.preventDefault();
-      var name=document.getElementById("name").value;;
-      var password=  document.getElementById("password").value;
-      var email = document.getElementById("email").value;
-      var dob = document.getElementById("birthDate").value;
-      var country = document.getElementById("country").value;
-      var gender= document.querySelector("input[name]:checked").value;
-      
-      
-      
-      const formData={
-          name:name,
-          email:email,
-          password:password,
-          dob:dob,
-          country:country,
-          gender:gender
-        };
-        console.log(formData);
-      if(validate()){
-      fetch('/signup/',{
-        method:'POST',
-        headers: {
-        'Content-Type': 'application/json; charset=UTF-8'
-          },
-         body:JSON.stringify(formData)
-      })
-      .then(
-        function(response){
-          return response.json();
-        }
-      )
-      .then(
-        function(data){
-           alert(data.message)
-           if(data.redirect){
-             
-             window.location.href="/signin";
-           }
-        }
-      )
-      }
-    })
-  
-     </script>
+  <script src="./js/signup.js"></script>
   </body>
   </html>

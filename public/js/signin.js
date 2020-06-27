@@ -93,3 +93,37 @@ document.querySelector(".submit-btn").addEventListener("click", () => {
 function validate() {
   return status;
 }
+
+/*post*/
+const form=document.getElementById('form');
+form.addEventListener('submit',function(e){
+  
+  e.preventDefault();
+  var password=  document.getElementById("inputPassword").value;
+  var email = document.getElementById("inputEmail").value;
+ 
+  const formData={email:email,password:password};
+  if(validate()){
+  fetch('/signin/',{
+    method:'POST',
+    headers: {
+    'Content-Type': 'application/json; charset=UTF-8'
+      },
+     body:JSON.stringify(formData)
+  })
+  .then(
+    function(response){
+      return response.json();
+    }
+  )
+  .then(
+    function(data){
+       alert(data.message)
+       if(data.redirect){
+        window.sessionStorage.setItem('token',data.token);
+         window.location.href="/";
+       }
+    }
+  )
+  }
+})

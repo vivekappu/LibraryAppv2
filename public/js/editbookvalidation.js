@@ -126,6 +126,9 @@ form.addEventListener("submit", function (e) {
       fetch(posturl, {
         method: "POST",
         body: formData,
+        headers: {
+          'Authorization': 'Bearer ' + window.sessionStorage.getItem('token')
+        }
       })
         .then(function (response) {
           return response.json();
@@ -140,7 +143,10 @@ form.addEventListener("submit", function (e) {
   }
   if ((e.submitter.id === "deletebtn")) {
     console.log("here");
-    fetch(geturl)
+    fetch(geturl,
+      {headers: {
+        'Authorization': 'Bearer ' + window.sessionStorage.getItem('token')
+      }} )
       .then(function (response) {
         return response.json();
       })

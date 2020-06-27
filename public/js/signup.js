@@ -217,3 +217,51 @@ document.querySelector(".submit-btn").addEventListener("click", () => {
 function validate() {
   return status;
 }
+
+/*post*/
+const form=document.getElementById('form');
+form.addEventListener('submit',function(e){
+  
+  e.preventDefault();
+  var name=document.getElementById("name").value;;
+  var password=  document.getElementById("password").value;
+  var email = document.getElementById("email").value;
+  var dob = document.getElementById("birthDate").value;
+  var country = document.getElementById("country").value;
+  var gender= document.querySelector("input[name]:checked").value;
+  
+  
+  
+  const formData={
+      name:name,
+      email:email,
+      password:password,
+      dob:dob,
+      country:country,
+      gender:gender
+    };
+    console.log(formData);
+  if(validate()){
+  fetch('/signup/',{
+    method:'POST',
+    headers: {
+    'Content-Type': 'application/json; charset=UTF-8'
+      },
+     body:JSON.stringify(formData)
+  })
+  .then(
+    function(response){
+      return response.json();
+    }
+  )
+  .then(
+    function(data){
+       alert(data.message)
+       if(data.redirect){
+         
+         window.location.href="/signin";
+       }
+    }
+  )
+  }
+})
