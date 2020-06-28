@@ -37,7 +37,8 @@ signinRouter.post("/",function(req,res){
           
           const token=jwt.sign(
            { email:user[0].email,
-             userId:user[0]._id
+             userId:user[0]._id,
+             username:user[0].name
            },
            process.env.JWT_KEY,
           {

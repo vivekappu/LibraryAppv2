@@ -1,6 +1,7 @@
 const mongoose=require("mongoose")
+
 const connect = () => {
-    return mongoose.connect('mongodb://localhost:27017/Library', { useNewUrlParser: true, useUnifiedTopology: true });
+    return mongoose.connect(process.env.MONGODB_URI||'mongodb://localhost:27017/Library', { useNewUrlParser: true, useUnifiedTopology: true });
 
 };
 

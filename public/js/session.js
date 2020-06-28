@@ -1,5 +1,5 @@
 var decoded = jwt_decode(window.sessionStorage.getItem('token'));
-
+const name=decoded.username;
 let navitems=document.querySelectorAll(".nav-item");
 navitems=[...navitems]
 navitems.forEach(
@@ -11,7 +11,14 @@ navitems.forEach(
     }
 )
 
+
+
 if(decoded){
+//adding name of user 
+    const usericon=document.getElementById("username")
+    usericon.classList.remove("hide");
+    usericon.innerHTML+=name;
+    usericon.innerHTML+=" &nbsp;&nbsp;"
     document.getElementById("logout").classList.remove("hide");
     //don't show signin signup when logged
     console.log("here")

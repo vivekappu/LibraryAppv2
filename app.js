@@ -29,7 +29,7 @@ app.use("/addbook",addBookRouter)
 app.use("/addauthor",addAuthorRouter)
 app.use("/editbook",editBookRouter);
 app.use("/editauthor",editAuthorRouter)
-
+const port=process.env.port||5000;
 app.get("/",function (req, res) {
  
   res.render("index", {
@@ -40,4 +40,4 @@ app.get("/",function (req, res) {
   
 });
 app.listen("5000");
-console.log("Port:5000")
+console.log("Port:"+port)

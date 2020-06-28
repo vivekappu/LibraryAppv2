@@ -6,9 +6,9 @@
     <title>Library</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="../.././css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <style>
-      img{
+      .card-body img{
         width:300px;
         margin:10px;
       }
@@ -42,7 +42,8 @@
         <% } %>
       </div>
     </div>
-    <button type="button" id="logout"  class="btn btn-primary navbar nav-right pullright hide">logout</button>
+    <span id="username" class="hide nav-bar nav-right pull-right"><img src="/images/usericon.png" style="width:35px;height:35px">&nbsp;&nbsp;</span>
+    <button type="button" style="color:red" id="logout"  class="btn btn-primary navbar nav-right pullright hide">logout</button>
   </nav>
   <h1>Library</h1>
   <div class="panel panel-default">
