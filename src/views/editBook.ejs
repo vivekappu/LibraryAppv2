@@ -21,11 +21,11 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ">
         <% for(let i=0;i<nav.length;i++){%>
-          <a class="nav-item nav-link <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
+          <a class="nav-item nav-link <%if(nav[i].name=='addbook'||nav[i].name=='addauthor') {%>hide<%}%> <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
           <% } %>
       </div>
     </div>
-    <button type="button" id="logout"  class="btn btn-primary navbar nav-right pullright hide">logout</button>
+    <button type="button" id="logout"  class=" nav navbar btn-primary  hide">logout</button>
   </nav>
   <h1>Library</h1>
   <div class="panel panel-default">

@@ -38,7 +38,7 @@
         
         
         <% for(let i=0;i<nav.length;i++){%>
-          <a class="nav-item nav-link <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
+          <a class="nav-item nav-link <%if(nav[i].name=='addbook'||nav[i].name=='addauthor') {%>hide<%}%> <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
         <% } %>
       </div>
     </div>
@@ -68,7 +68,7 @@
                 <p class="card-text"><a href="#"><%=author.books%></a></p>
                 <p class="card-text"><small class="text-muted"><%=author.genre%></small></p>
                 <p class="description"><%=author.description%></p>
-                <a href="/editauthor/<%=author._id%>"><span class="badge badge-danger">Edit</span></a>
+                <a href="/editauthor/<%=author._id%>"><span  id="edit" class="badge hide badge-danger">Edit</span></a>
               </div>
             </div>
           </div>
@@ -100,9 +100,9 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script src="./css/highlighter.js"></script>
-<script src="./js/script.js"></script>
-<script src="./js/jwt-decode.min.js"></script>
-<script src="./js/session.js"></script>
+<script src=".././js/script.js"></script>
+<script src=".././js/jwt-decode.min.js"></script>
+<script src=".././js/session.js"></script>
 </body>
 </html>
 

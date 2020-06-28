@@ -38,7 +38,7 @@
         
         
         <% for(let i=0;i<nav.length;i++){%>
-          <a class="nav-item nav-link <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
+          <a class="nav-item nav-link <%if(nav[i].name=='addbook'||nav[i].name=='addauthor') {%>hide<%}%> <%if(nav[i].name==active) {%>active<%}%>" href=<%=nav[i].link%>><%=nav[i].name%></a>
         <% } %>
       </div>
     </div>
